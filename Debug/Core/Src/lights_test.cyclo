@@ -1,0 +1,5 @@
+../Core/Src/lights_test.c:20:6:test_program	1
+../Core/Src/lights_test.c:38:6:test_feed_shift_ref	3
+../Core/Src/lights_test.c:60:1:test_format_lights	1
+../Core/Src/lights_test.c:109:6:test_get_buttons	7
+../Core/Src/lights_test.c:145:6:test_toggle_blue	1

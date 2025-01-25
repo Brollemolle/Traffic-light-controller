@@ -1,0 +1,120 @@
+\doxysection{Src/lights\+\_\+functions.c File Reference}
+\hypertarget{lights__functions_8c}{}\label{lights__functions_8c}\index{Src/lights\_functions.c@{Src/lights\_functions.c}}
+
+
+Traffic lights, functions for controlling traffic lights.
+
+\doxylink{lights__functions_8c}{lights\+\_\+functions.\+c}.  
+
+
+{\ttfamily \#include "{}lights\+\_\+functions.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lights__functions_8c_ac7990731183d1628695070804ff5d445}{feed\+\_\+shift\+\_\+reg}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}lights)
+\begin{DoxyCompactList}\small\item\em feed\+\_\+shift\+\_\+reg, feed shift register with 24 bit input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lights__functions_8c_ac288611568aaa4872418d99dfda1e4e7}{format\+\_\+lights}} (const \mbox{\hyperlink{structlstate__t}{lstate\+\_\+t}} \texorpdfstring{$\ast$}{*}curr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}lights)
+\begin{DoxyCompactList}\small\item\em format\+\_\+lights, transform state of traffic lights to 24 bit input. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{lights__functions_8c_a390fb1be453c2eac1b598cd680277bd0}{get\+\_\+buttons}} ()
+\begin{DoxyCompactList}\small\item\em get\+\_\+buttons, returns an 8-\/bit integer. Bits 0-\/5 represent one button each. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lights__functions_8c_a1eaa1ece1e4224ab3f9b7956ed6eed24}{toggle\+\_\+blue}} (light\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+light)
+\begin{DoxyCompactList}\small\item\em toggle\+\_\+blue, change logical state of ligh to red if currently blue and blue if it is currently red. Does nothing if state is neither red nor blue. \end{DoxyCompactList}\item 
+\Hypertarget{lights__functions_8c_aef264cbe5395ab07c16970f48f88637e}\label{lights__functions_8c_aef264cbe5395ab07c16970f48f88637e} 
+{\bfseries pedestrian\+\_\+go} (light\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+light)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Traffic lights, functions for controlling traffic lights.
+
+\doxylink{lights__functions_8c}{lights\+\_\+functions.\+c}. 
+
+\begin{DoxyAuthor}{Author}
+Adam Brolin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03-\/December-\/2024
+\end{DoxyDate}
+Functions and structures for controlling and handling flow of traffic lights. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lights__functions_8c_ac7990731183d1628695070804ff5d445}\label{lights__functions_8c_ac7990731183d1628695070804ff5d445} 
+\index{lights\_functions.c@{lights\_functions.c}!feed\_shift\_reg@{feed\_shift\_reg}}
+\index{feed\_shift\_reg@{feed\_shift\_reg}!lights\_functions.c@{lights\_functions.c}}
+\doxysubsubsection{\texorpdfstring{feed\_shift\_reg()}{feed\_shift\_reg()}}
+{\footnotesize\ttfamily void feed\+\_\+shift\+\_\+reg (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{lights }\end{DoxyParamCaption})}
+
+
+
+feed\+\_\+shift\+\_\+reg, feed shift register with 24 bit input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint8\+\_\+t} & \texorpdfstring{$\ast$}{*}lights, pointer to 24 bits divided into 3 bytes. Each bit represent an led on the 74HC595D shield, some bits are unmapped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void, no return value 
+\end{DoxyReturn}
+\Hypertarget{lights__functions_8c_ac288611568aaa4872418d99dfda1e4e7}\label{lights__functions_8c_ac288611568aaa4872418d99dfda1e4e7} 
+\index{lights\_functions.c@{lights\_functions.c}!format\_lights@{format\_lights}}
+\index{format\_lights@{format\_lights}!lights\_functions.c@{lights\_functions.c}}
+\doxysubsubsection{\texorpdfstring{format\_lights()}{format\_lights()}}
+{\footnotesize\ttfamily void format\+\_\+lights (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structlstate__t}{lstate\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{curr,  }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{lights }\end{DoxyParamCaption})}
+
+
+
+format\+\_\+lights, transform state of traffic lights to 24 bit input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \doxylink{structlstate__t}{lstate\+\_\+t} \texorpdfstring{$\ast$}{*}curr, the current state of the traffic intersection. \\
+\hline
+{\em uint8\+\_\+t} & \texorpdfstring{$\ast$}{*}lights, location where 24 bit value will return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void, no return value. 
+\end{DoxyReturn}
+\Hypertarget{lights__functions_8c_a390fb1be453c2eac1b598cd680277bd0}\label{lights__functions_8c_a390fb1be453c2eac1b598cd680277bd0} 
+\index{lights\_functions.c@{lights\_functions.c}!get\_buttons@{get\_buttons}}
+\index{get\_buttons@{get\_buttons}!lights\_functions.c@{lights\_functions.c}}
+\doxysubsubsection{\texorpdfstring{get\_buttons()}{get\_buttons()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+\_\+buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+\_\+buttons, returns an 8-\/bit integer. Bits 0-\/5 represent one button each. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void,no} & parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t, bits 0-\/5 represent one button each. Use macros BTN\+\_\+\+X\+\_\+\+XXXX with bit-\/wise AND to check for specific button. 1 is on, 0 is off. 
+\end{DoxyReturn}
+\Hypertarget{lights__functions_8c_a1eaa1ece1e4224ab3f9b7956ed6eed24}\label{lights__functions_8c_a1eaa1ece1e4224ab3f9b7956ed6eed24} 
+\index{lights\_functions.c@{lights\_functions.c}!toggle\_blue@{toggle\_blue}}
+\index{toggle\_blue@{toggle\_blue}!lights\_functions.c@{lights\_functions.c}}
+\doxysubsubsection{\texorpdfstring{toggle\_blue()}{toggle\_blue()}}
+{\footnotesize\ttfamily void toggle\+\_\+blue (\begin{DoxyParamCaption}\item[{light\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+light }\end{DoxyParamCaption})}
+
+
+
+toggle\+\_\+blue, change logical state of ligh to red if currently blue and blue if it is currently red. Does nothing if state is neither red nor blue. 
+
+\begin{DoxyNote}{Note}
+Logical blue represents both red and blue led on. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em light\+\_\+t} & \texorpdfstring{$\ast$}{*}p\+\_\+light, pointer to the logical state of a pedestrian light. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void, no return value. 
+\end{DoxyReturn}

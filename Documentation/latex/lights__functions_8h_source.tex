@@ -1,0 +1,46 @@
+\doxysection{lights\+\_\+functions.\+h}
+\hypertarget{lights__functions_8h_source}{}\label{lights__functions_8h_source}\index{Inc/lights\_functions.h@{Inc/lights\_functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}FreeRTOS.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}cmsis\_os.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio_8h}{gpio.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{main_8h}{main.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spi_8h}{spi.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{usart_8h}{usart.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ SHIFT\_REG\_CAPACITY\ 3}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ BTN\_P\_NORTH\ 0b00000001}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ BTN\_P\_WEST\ 0b00000010}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BTN\_T\_NORTH\ 0b00000100}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BTN\_T\_EAST\ 0b00001000}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BTN\_T\_SOUTH\ 0b00010000}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ BTN\_T\_WEST\ 0b00100000}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ red,\ green,\ yellow,\ blue,\ off\ \}\ light\_t;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{north\_south,\ east\_west,\ pnorth,\ pwest,\ none,\ ok\}\ direction\_t;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structlstate__t}{lstate\_t}}\ \{}
+\DoxyCodeLine{00026\ \ \ light\_t\ t\_north;}
+\DoxyCodeLine{00027\ \ \ light\_t\ t\_south;}
+\DoxyCodeLine{00028\ \ \ light\_t\ t\_west;}
+\DoxyCodeLine{00029\ \ \ light\_t\ t\_east;}
+\DoxyCodeLine{00030\ \ \ light\_t\ p\_north;}
+\DoxyCodeLine{00031\ \ \ light\_t\ p\_west;}
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{structlstate__t}{lstate\_t}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ feed\_shift\_reg(uint8\_t\ *lights);}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ format\_lights(\textcolor{keyword}{const}\ \mbox{\hyperlink{structlstate__t}{lstate\_t}}\ *curr,\ uint8\_t\ *lights);}
+\DoxyCodeLine{00037\ uint8\_t\ get\_buttons();}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ toggle\_blue(light\_t\ *p\_light);}
+\DoxyCodeLine{00039\ \textcolor{comment}{//void\ pedestrian\_go(light\_t\ *p\_light);}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//void\ car\_go(light\_t\ *t\_light);}}
+
+\end{DoxyCode}

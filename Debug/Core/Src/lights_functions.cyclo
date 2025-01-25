@@ -1,0 +1,5 @@
+../Core/Src/lights_functions.c:25:6:feed_shift_reg	1
+../Core/Src/lights_functions.c:37:6:format_lights	25
+../Core/Src/lights_functions.c:138:9:get_buttons	7
+../Core/Src/lights_functions.c:166:6:toggle_blue	3
+../Core/Src/lights_functions.c:173:1:pedestrian_go	1
