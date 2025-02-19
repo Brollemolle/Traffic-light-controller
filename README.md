@@ -81,7 +81,6 @@ Traffic-light-controller/
 ├── Drivers/            # STM32 HAL drivers
 ├── STM32CubeIDE/       # STM32CubeIDE project files
 ├── README.md           # This file
-└── Documentation/      # Project-related documents (if any)
 ```
 
 
